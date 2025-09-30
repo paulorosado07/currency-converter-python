@@ -21,9 +21,14 @@ def test_list_transactions(client):
         return_value=Response(200, json={"data": {"BRL": {"value": 5.0}}})
     )
 
-   
+    # Create two conversions (cookie is sent automatically)
+    for amt in ("1", "2"):
+        client.post(
+            "/api/v1/convert",
+            json={"fromCurrency": "USD", "toCurrency": "BRL", "amount": amt},
+        )
 
     r = client.get(f"/api/v1/transactions?userId={uid}")
     assert r.status_code == 200
     arr = r.json()
-    assert isinstance(arr, list) and len(arr) >= 0
+    assert isinstance(arr, list) and len(arr) >= 2
