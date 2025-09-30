@@ -1,7 +1,15 @@
-# 🚀 Project Overview
+## 🚀 Project Overview
 
-This project is a **FastAPI** application packaged in a **Docker** container for easy execution and distribution.
-It exposes a local API with an interactive **Swagger UI** documentation, allowing developers to explore and test the endpoints conveniently.
+This project is a **Currency Conversion API** built with **FastAPI**, designed to convert values between different currencies in real time using the [CurrencyAPI](https://app.currencyapi.com/).
+
+The application is packaged in a **Docker** container for easy setup and execution, and provides an interactive **Swagger UI** so developers can quickly explore and test the endpoints.
+
+Key features:
+
+* Convert amounts between different currencies (e.g., USD → EUR).
+* Real-time exchange rates fetched from CurrencyAPI.
+* Dockerized environment for quick startup and consistency.
+* Interactive documentation available at `/docs`.
 
 > ⚠️ **Prerequisite**: You must have **Docker** installed on your machine to run this project.
 
